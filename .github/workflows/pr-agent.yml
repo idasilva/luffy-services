@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   devops:
-    uses: xpto-ai/devops/.github/workflows/pr-agent.yml@main
+    uses: idasilva/cicd-devops/.github/workflows/pr-agent.yml@main
     with:
       auto_describe: true
       auto_review: true

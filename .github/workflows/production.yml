@@ -6,7 +6,7 @@ on:
 
 jobs:
   production:
-    uses: xpto-ai/devops/.github/workflows/production-argocd.yml@main
+    uses: idasilva/cicd-devops/.github/workflows/production-argocd.yml@main
     with:
       aws_region: "us-east-1"
       aws_role: "arn:aws:iam::xpto:role/oidc-luffy-services"

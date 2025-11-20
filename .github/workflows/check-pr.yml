@@ -6,7 +6,7 @@ on:
 
 jobs:
   devops:
-    uses: xpto-ai/devops/.github/workflows/pr-title-checker.yml@main
+    uses: idasilva/cicd-devops/.github/workflows/pr-title-checker.yml@main
     with:
       pr_title: ${{ github.event.pull_request.title }}
       branch_name: ${{ github.head_ref }}

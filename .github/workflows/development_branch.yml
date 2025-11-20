@@ -6,7 +6,7 @@ on:
 
 jobs: 
   devops:
-    uses: xpto-ai/devops/.github/workflows/development-branch.yml@main
+    uses: idasilva/cicd-devops/.github/workflows/development-branch.yml@main
     with:
       region: "us-east-1"
       role: "arn:aws:iam::xpto:role/oidc-luffy-services"
