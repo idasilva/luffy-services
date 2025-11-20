@@ -1,0 +1,16 @@
+name: Production Deployment - EKS
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  production:
+    uses: xpto-ai/devops/.github/workflows/production-argocd.yml@main
+    with:
+      aws_region: "us-east-1"
+      aws_role: "arn:aws:iam::xpto:role/oidc-luffy-services"
+      aws_sns_topic: "arn:aws:sns:us-east-1:xpto:infra-alarms"
+      aws_eks_namespace: "luffy-services"
+      aws_eks_cluster: "xpto-production"
+      image_name: "xpto.dkr.ecr.us-east-1.amazonaws.com/luffy-services"

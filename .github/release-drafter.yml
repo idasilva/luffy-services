@@ -1,0 +1,12 @@
+commitish: main
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  ## Info
+  This Draft was deployed to `development`.
+
+  ## How to Promote?
+  In order to promote this to `staging`, edit the draft as a **"pre-release"**.
+
+  ## Changelog:
+  $CHANGES

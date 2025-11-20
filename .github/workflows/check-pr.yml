@@ -1,0 +1,15 @@
+name: Check CI
+
+on:
+  pull_request:
+    types: [edited, synchronize]
+
+jobs:
+  devops:
+    uses: xpto-ai/devops/.github/workflows/pr-title-checker.yml@main
+    with:
+      pr_title: ${{ github.event.pull_request.title }}
+      branch_name: ${{ github.head_ref }}
+      repo_name: ${{ github.repository }}
+    secrets:
+      DEVOPS_TOKEN: ${{ secrets.DEVOPS_TOKEN }}

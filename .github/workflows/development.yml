@@ -1,0 +1,26 @@
+name: Development Deployment - EKS 
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - VERSION
+
+jobs:
+  development:
+    uses: xpto-ai/devops/.github/workflows/development-argocd.yml@main
+    with:
+      aws_region: "us-east-1"
+      aws_role: "arn:aws:iam::xpto:role/oidc-luffy-services"
+      image_name: "xpto.dkr.ecr.us-east-1.amazonaws.com/luffy-services"      
+      eks_namespace: "luffy-services"
+      eks_cluster: "xpto-development"
+      ref: ${{ github.event.pull_request.merge_commit_sha }}
+      argocd_app_name: "luffy-services"
+      values_file_path: "./deploy/development.yml"
+      with_v: true
+      prerelease: true
+      prerelease_suffix: "rc"
+    secrets:
+      DEVOPS_TOKEN: ${{ secrets.DEVOPS_TOKEN }}

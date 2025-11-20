@@ -1,0 +1,23 @@
+name: Check CI
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  devops:
+    uses: xpto-ai/devops/.github/workflows/pr-agent.yml@main
+    with:
+      auto_describe: true
+      auto_review: true
+      auto_improve: true
+      generate_ai_title: true
+      publish_labels: true
+      add_original_description: true
+    secrets:
+      OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+      DEVOPS_TOKEN: ${{ secrets.DEVOPS_TOKEN }}

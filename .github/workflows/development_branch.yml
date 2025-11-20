@@ -1,0 +1,17 @@
+name: Development Branch Deployment - EKS
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs: 
+  devops:
+    uses: xpto-ai/devops/.github/workflows/development-branch.yml@main
+    with:
+      region: "us-east-1"
+      role: "arn:aws:iam::xpto:role/oidc-luffy-services"
+      sns_topic: "arn:aws:sns:us-east-1:xpto:infra-alarms"
+      namespace: "luffy-services"
+      cluster_name: "xpto-development"
+      deployment_type: "rollout"
+      image_name: "xpto.dkr.ecr.us-east-1.amazonaws.com/luffy-services"

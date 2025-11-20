@@ -1,0 +1,19 @@
+name: Check CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  devops:
+    uses: xpto-ai/devops/.github/workflows/check-ci.yml@main
+    with:
+      aws_region: "us-east-1"
+      aws_role: "arn:aws:iam::xpto:role/oidc-luffy-services"
+      image_name: "xpto.dkr.ecr.us-east-1.amazonaws.com/luffy-services"
+      enable_security_check: true
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      SONAR_PROJECT_KEY: xpto-ai_luffy-services_AY1gh3-de6h19ZQmlrV6
+      
