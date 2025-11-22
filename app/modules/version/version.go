@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	mux "github.com/idasilva/aws-serverless/luffy/services/api"
+	mux "github.com/idasilva/luffy-services/api"
 	log "github.com/sirupsen/logrus"
 )
 
