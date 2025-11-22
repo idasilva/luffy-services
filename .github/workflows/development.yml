@@ -10,6 +10,9 @@ on:
 jobs:
   development:
     uses: idasilva/cicd-devops/.github/workflows/development-argocd.yml@main
+    permissions:
+      id-token: write
+      contents: write
     with:
       aws_region: "us-east-1"
       aws_role: "arn:aws:iam::560978416398:role/oidc-luffy-services"
