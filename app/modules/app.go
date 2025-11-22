@@ -1,8 +1,8 @@
 package modules
 
 import (
-	"github.com/idasilva/aws-serverless/luffy/services/api"
-	"github.com/idasilva/aws-serverless/luffy/services/app/modules/version"
+	"github.com/idasilva/luffy-services/api"
+	"github.com/idasilva/luffy-services/app/modules/version"
 )
 
 func Application() *api.API {

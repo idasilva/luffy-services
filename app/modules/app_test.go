@@ -3,7 +3,7 @@ package modules
 import (
 	"testing"
 
-	"github.com/idasilva/aws-serverless/luffy/services/app/modules/version"
+	"github.com/idasilva/luffy-services/app/modules/version"
 	"github.com/stretchr/testify/assert"
 )
 

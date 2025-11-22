@@ -1,11 +1,14 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/idasilva/aws-serverless/luffy/services/cmd"
+	"github.com/idasilva/luffy-services/cmd"
+	"go.uber.org/zap"
 )
 
 func main() {
+	logger, _ := zap.NewProduction()
+	defer logger.Sync()
+	
+	logger.Info("Starting luffy-services application")
 	cmd.Execute()
 }
