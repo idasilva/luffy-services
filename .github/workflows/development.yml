@@ -12,13 +12,12 @@ jobs:
     uses: idasilva/cicd-devops/.github/workflows/development-argocd.yml@main
     with:
       aws_region: "us-east-1"
-      aws_role: "arn:aws:iam::xpto:role/oidc-luffy-services"
-      image_name: "xpto.dkr.ecr.us-east-1.amazonaws.com/luffy-services"      
-      eks_namespace: "luffy-services"
-      eks_cluster: "xpto-development"
+      aws_role: "arn:aws:iam::560978416398:role/oidc-luffy-services"
+      image_name: "560978416398.dkr.ecr.us-east-1.amazonaws.com/luffy-services"      
+      eks_namespace: "luffy"
+      eks_cluster: "default"
       ref: ${{ github.event.pull_request.merge_commit_sha }}
       argocd_app_name: "luffy-services"
-      values_file_path: "./deploy/development.yml"
       with_v: true
       prerelease: true
       prerelease_suffix: "rc"
