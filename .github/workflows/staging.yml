@@ -9,9 +9,8 @@ jobs:
     uses: idasilva/cicd-devops/.github/workflows/staging-argocd.yml@main
     with:
       aws_region: "us-east-1"
-      aws_role: "arn:aws:iam::xpto:role/oidc-luffy-services"  
-      image_name: "xpto.dkr.ecr.us-east-1.amazonaws.com/luffy-services"
-      values_file_path: "./deploy/staging.yml"
+      aws_role: "arn:aws:iam::560978416398:role/oidc-luffy-services"  
+      image_name: "560978416398.dkr.ecr.us-east-1.amazonaws.com/luffy-services"
       tag_suffix: "prerelease"
       ref_name: ${{ github.ref_name }}
     secrets:
